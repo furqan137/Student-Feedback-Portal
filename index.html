@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Portal - Submit & Manage Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>📚 FeedbackHub</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Feedback Portal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="favorites-btn" class="favorites-btn">
+                            <span class="heart-icon">❤️</span>
+                            <span class="favorites-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero-content animate-fade-up">
+                    <h1 class="hero-title">Student Feedback Portal</h1>
+                    <p class="hero-subtitle">Share your thoughts, manage your feedback, and help us improve!</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="total-feedback">0</span>
+                            <span class="stat-label">Total Feedback</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="avg-rating">0.0</span>
+                            <span class="stat-label">Avg Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="favorite-count">0</span>
+                            <span class="stat-label">Favorites</span>
+                        </div>
+                    </div>
+                    <a href="#submit-feedback" class="cta-button pulse-animation">
+                        <span>Submit Feedback</span>
+                        <i class="arrow-icon">→</i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Form Section -->
+        <section id="submit-feedback" class="feedback-form-section">
+            <div class="container">
+                <div class="section-header animate-fade-up">
+                    <h2>Submit Your Feedback</h2>
+                    <p>Share your thoughts and help us enhance your learning experience</p>
+                </div>
+                
+                <div class="form-container animate-slide-up">
+                    <!-- Alert Messages -->
+                    <div id="alert-container" class="alert-container"></div>
+                    
+                    <form id="feedback-form" class="feedback-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" class="form-input" required>
+                                <span class="error-message" id="fullName-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="courseName" class="form-label">Course Name</label>
+                                <input type="text" id="courseName" name="courseName" class="form-input" required>
+                                <span class="error-message" id="courseName-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="instructorName" class="form-label">Instructor Name</label>
+                                <input type="text" id="instructorName" name="instructorName" class="form-input" required>
+                                <span class="error-message" id="instructorName-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="rating" class="form-label">Rating</label>
+                                <div class="rating-container">
+                                    <select id="rating" name="rating" class="form-select" required>
+                                        <option value="">Select a rating</option>
+                                        <option value="1">⭐ 1 - Poor</option>
+                                        <option value="2">⭐⭐ 2 - Fair</option>
+                                        <option value="3">⭐⭐⭐ 3 - Good</option>
+                                        <option value="4">⭐⭐⭐⭐ 4 - Very Good</option>
+                                        <option value="5">⭐⭐⭐⭐⭐ 5 - Excellent</option>
+                                    </select>
+                                </div>
+                                <span class="error-message" id="rating-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedback" class="form-label">Feedback Comments</label>
+                            <textarea id="feedback" name="feedback" class="form-textarea" rows="5" placeholder="Please share your detailed feedback..." required></textarea>
+                            <div class="character-count">
+                                <span id="char-count">0</span>/500 characters
+                            </div>
+                            <span class="error-message" id="feedback-error"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <span class="button-text">Submit Feedback</span>
+                            <span class="button-loader" style="display: none;">
+                                <div class="spinner"></div>
+                                Submitting...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Management Section -->
+        <section id="view-feedback" class="feedback-display-section">
+            <div class="container">
+                <div class="section-header animate-fade-up">
+                    <h2>Manage Your Feedback</h2>
+                    <p>View, edit, delete, and favorite your submitted feedback</p>
+                </div>
+
+                <!-- Filter and Search Controls -->
+                <div class="feedback-controls animate-slide-up">
+                    <div class="search-container">
+                        <input type="text" id="search-feedback" class="search-input" placeholder="Search feedback...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <div class="filter-container">
+                        <select id="rating-filter" class="filter-select">
+                            <option value="">All Ratings</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Star</option>
+                        </select>
+                        <select id="sort-feedback" class="filter-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="rating-high">Highest Rating</option>
+                            <option value="rating-low">Lowest Rating</option>
+                        </select>
+                        <button id="show-favorites" class="filter-btn">
+                            <span class="heart-icon">❤️</span>
+                            Show Favorites
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="feedback-list" class="feedback-list">
+                    <div class="no-feedback animate-fade-up">
+                        <div class="no-feedback-icon">📝</div>
+                        <h3>No feedback submitted yet</h3>
+                        <p>Be the first to share your thoughts!</p>
+                        <a href="#submit-feedback" class="cta-button-small">Submit Feedback</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Favorites Modal -->
+    <div id="favorites-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>❤️ Your Favorite Feedback</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="favorites-list" class="favorites-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>✏️ Edit Feedback</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-form" class="edit-form">
+                    <input type="hidden" id="edit-id">
+                    <div class="form-group">
+                        <label for="edit-fullName" class="form-label">Full Name</label>
+                        <input type="text" id="edit-fullName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-courseName" class="form-label">Course Name</label>
+                        <input type="text" id="edit-courseName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-instructorName" class="form-label">Instructor Name</label>
+                        <input type="text" id="edit-instructorName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-rating" class="form-label">Rating</label>
+                        <select id="edit-rating" class="form-select" required>
+                            <option value="1">⭐ 1 - Poor</option>
+                            <option value="2">⭐⭐ 2 - Fair</option>
+                            <option value="3">⭐⭐⭐ 3 - Good</option>
+                            <option value="4">⭐⭐⭐⭐ 4 - Very Good</option>
+                            <option value="5">⭐⭐⭐⭐⭐ 5 - Excellent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-feedback" class="form-label">Feedback Comments</label>
+                        <textarea id="edit-feedback" class="form-textarea" rows="4" required></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary modal-close">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 FeedbackHub</h3>
+                    <p>Empowering students to share their voice and improve education quality through innovative feedback solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="index.html">Feedback Portal</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul class="footer-links">
+                        <li><a href="#submit-feedback">Submit Feedback</a></li>
+                        <li><a href="#view-feedback">Manage Feedback</a></li>
+                        <li><a href="#" id="footer-favorites">Favorites</a></li>
+                        <li><a href="about.html#analytics">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 support@feedbackhub.edu</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>📍 123 Education St, Learning City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FeedbackHub. All rights reserved. | Made with ❤️ for students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

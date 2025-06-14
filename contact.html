@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact FeedbackHub - Get in Touch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>📚 FeedbackHub</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Feedback Portal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content animate-fade-up">
+                    <h1 class="hero-title">Get in <span class="gradient-text">Touch</span></h1>
+                    <p class="hero-subtitle">
+                        Have questions, suggestions, or need support? We're here to help and would love to hear from you.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods Section -->
+        <section class="contact-methods-section">
+            <div class="container">
+                <div class="contact-methods-grid">
+                    <div class="contact-method animate-slide-up">
+                        <div class="method-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>Get in touch via email for detailed inquiries</p>
+                        <a href="mailto:support@feedbackhub.edu" class="method-link">support@feedbackhub.edu</a>
+                    </div>
+                    <div class="contact-method animate-slide-up" style="animation-delay: 0.1s">
+                        <div class="method-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>Speak directly with our support team</p>
+                        <a href="tel:+15551234567" class="method-link">(555) 123-4567</a>
+                    </div>
+                    <div class="contact-method animate-slide-up" style="animation-delay: 0.2s">
+                        <div class="method-icon">💬</div>
+                        <h3>Live Chat</h3>
+                        <p>Get instant help with our live chat support</p>
+                        <button class="method-link chat-btn">Start Chat</button>
+                    </div>
+                    <div class="contact-method animate-slide-up" style="animation-delay: 0.3s">
+                        <div class="method-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <p>Come see us at our headquarters</p>
+                        <span class="method-link">123 Education St, Learning City</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info animate-fade-up">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                        
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">🕒</div>
+                                <div class="detail-content">
+                                    <h4>Business Hours</h4>
+                                    <p>Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+                                       Saturday: 10:00 AM - 4:00 PM EST<br>
+                                       Sunday: Closed</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">⚡</div>
+                                <div class="detail-content">
+                                    <h4>Response Time</h4>
+                                    <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">🌍</div>
+                                <div class="detail-content">
+                                    <h4>Global Support</h4>
+                                    <p>We provide support to students and institutions worldwide in multiple languages.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container animate-slide-up">
+                        <form id="contact-form" class="contact-form">
+                            <div id="contact-alert-container" class="alert-container"></div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                    <span class="error-message" id="firstName-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                    <span class="error-message" id="lastName-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                    <span class="error-message" id="email-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number (Optional)</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input">
+                                    <span class="error-message" id="phone-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="feedback">Platform Feedback</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="bug">Bug Report</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="subject-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Please provide details about your inquiry..." required></textarea>
+                                <div class="character-count">
+                                    <span id="message-char-count">0</span>/1000 characters
+                                </div>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for updates and tips
+                                </label>
+                            </div>
+
+                            <button type="submit" class="submit-button">
+                                <span class="button-text">Send Message</span>
+                                <span class="button-loader" style="display: none;">
+                                    <div class="spinner"></div>
+                                    Sending...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header animate-fade-up">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item animate-slide-up" style="animation-delay: 0.1s">
+                        <div class="faq-question">
+                            <h3>How do I submit feedback on FeedbackHub?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Simply navigate to our Feedback Portal, fill out the form with your course details, instructor information, rating, and comments. Your feedback will be saved and can be managed from your dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-slide-up" style="animation-delay: 0.2s">
+                        <div class="faq-question">
+                            <h3>Can I edit or delete my feedback after submission?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! FeedbackHub allows you to edit or delete your feedback at any time. Simply go to the "Manage Feedback" section, find your submission, and use the edit or delete options.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-slide-up" style="animation-delay: 0.3s">
+                        <div class="faq-question">
+                            <h3>What is the favorites feature?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The favorites feature allows you to mark important feedback submissions for easy access. You can add feedback to favorites by clicking the heart icon and view all your favorites from the favorites modal.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-slide-up" style="animation-delay: 0.4s">
+                        <div class="faq-question">
+                            <h3>Is my feedback anonymous?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Your feedback is stored securely and only shared with authorized personnel. We offer options for anonymous feedback submission and respect your privacy preferences.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-slide-up" style="animation-delay: 0.5s">
+                        <div class="faq-question">
+                            <h3>How do I contact technical support?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can reach our technical support team via email at support@feedbackhub.edu, call us at (555) 123-4567, or use the live chat feature available on our website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Team Section -->
+        <section class="support-team-section">
+            <div class="container">
+                <div class="section-header animate-fade-up">
+                    <h2>Our Support Team</h2>
+                    <p>Meet the people dedicated to helping you</p>
+                </div>
+                <div class="support-team-grid">
+                    <div class="team-member animate-slide-up" style="animation-delay: 0.1s">
+                        <div class="member-avatar">👩‍💼</div>
+                        <h3>Lisa Thompson</h3>
+                        <p class="member-role">Customer Success Manager</p>
+                        <p class="member-bio">Dedicated to ensuring every student has a positive experience with FeedbackHub.</p>
+                        <a href="mailto:lisa@feedbackhub.edu" class="member-contact">lisa@feedbackhub.edu</a>
+                    </div>
+                    <div class="team-member animate-slide-up" style="animation-delay: 0.2s">
+                        <div class="member-avatar">👨‍🔧</div>
+                        <h3>David Park</h3>
+                        <p class="member-role">Technical Support Lead</p>
+                        <p class="member-bio">Expert in troubleshooting technical issues and helping users maximize platform features.</p>
+                        <a href="mailto:david@feedbackhub.edu" class="member-contact">david@feedbackhub.edu</a>
+                    </div>
+                    <div class="team-member animate-slide-up" style="animation-delay: 0.3s">
+                        <div class="member-avatar">👩‍🎓</div>
+                        <h3>Maria Garcia</h3>
+                        <p class="member-role">Student Success Specialist</p>
+                        <p class="member-bio">Former student advocate focused on helping students navigate the feedback process effectively.</p>
+                        <a href="mailto:maria@feedbackhub.edu" class="member-contact">maria@feedbackhub.edu</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 FeedbackHub</h3>
+                    <p>Empowering students to share their voice and improve education quality through innovative feedback solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="index.html">Feedback Portal</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="mailto:support@feedbackhub.edu">Email Support</a></li>
+                        <li><a href="tel:+15551234567">Phone Support</a></li>
+                        <li><a href="#" class="chat-btn">Live Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 support@feedbackhub.edu</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>📍 123 Education St, Learning City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FeedbackHub. All rights reserved. | Made with ❤️ for students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
